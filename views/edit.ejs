@@ -1,0 +1,59 @@
+<%- include('partials/head') %> <%- include('partials/navbar') %>
+<div class="container">
+  <h1 class="display-3">UFO Sighting</h1>
+  <form action="/sighting/<%=index%>?_method=PUT" method="POST">
+    <div class="form-row">
+      <div class="form-group">
+        <label class="h2 col" for="description">Event Description</label>
+        <textarea
+          class="col"
+          name="description"
+          id="description"
+          cols="60"
+          rows="10"
+        >
+<%= content.description %></textarea
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-row">
+        <h2 class="h2">Event Details</h2>
+      </div>
+      <ul>
+        <li>
+          <label for="date_time">Date & Time:</label>
+          <input
+            type="text"
+            name="date_time"
+            value="<%= content.date_time %>"
+          />
+        </li>
+        <li>
+          <label for="city">City:</label>
+          <input type="text" name="city" value="<%= content.city %>" />
+        </li>
+        <li>
+          <label for="state">State:</label>
+          <input type="text" name="state" value="<%= content.state %>" />
+        </li>
+        <li>
+          <label for="shape">Shape:</label>
+          <input type="text" name="shape" value="<%= content.shape %>" />
+        </li>
+        <li>
+          <label for="duration">Duration:</label>
+          <input type="text" name="duration" value="<%= content.duration %>" />
+        </li>
+        <li>
+          <label for="summary" class="d-block">Summary:</label>
+          <textarea name="summary" id="summary" cols="30" rows="6">
+<%= content.summary %></textarea
+          >
+        </li>
+      </ul>
+    </div>
+    <button class="btn btn-primary">Confirm Changes</button>
+  </form>
+</div>
+<%- include('partials/footer') %>

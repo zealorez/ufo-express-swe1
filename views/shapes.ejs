@@ -1,0 +1,32 @@
+<%- include('partials/head') %> <%- include('partials/navbar') %>
+<div class="container">
+  <h1>Shapes</h1>
+  <div class="row">
+    <% for (let i=0; i < shapeArray.length; i +=1 ) { %>
+
+    <div class="col-4 mb-4">
+      <div class="card" style="width: 18rem">
+        <!-- <img src="..." class="card-img-top" alt="..." /> -->
+        <div class="card-body">
+          <h5 class="card-title"><%= shapeArray[i]%></h5>
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <% for (let k =0; k < content.length; k++) { %> <% if
+          (content[k].shape === shapeArray[i]) { %>
+          <li class="list-group-item">
+            <a href="/sighting/<%=k%>"
+              ><%= `${content[k].city}, ${content[k].state}` %></a
+            >
+          </li>
+          <% } %> <% } %>
+        </ul>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</div>
+<%-include('partials/footer') %>

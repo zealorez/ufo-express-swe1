@@ -1,0 +1,71 @@
+<%- include('partials/head') %> <%- include('partials/navbar') %>
+<div class="container">
+  <h1>UFO Sighting Form</h1>
+  <form class="was-validated" action="/sighting" method="POST">
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input
+        type="text"
+        name="description"
+        class="form-control is-valid"
+        required
+      />
+      <div class="invalid-feedback">Please enter a description</div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col">
+        <label for="date">Date</label>
+        <input
+          type="text"
+          name="date_time"
+          placeholder="dd-mm-yyyy 23:59"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback">Please enter a date</div>
+      </div>
+      <div class="form-group col">
+        <label for="city">City</label>
+        <input type="text" name="city" class="form-control" required />
+        <div class="invalid-feedback">Please enter a city</div>
+      </div>
+      <div class="form-group col">
+        <label for="state">State</label>
+        <select class="form-control" name="state" id="state" required>
+          <option value="">...</option>
+          <option value="AL">Alabama</option>
+          <option value="AK">Alaska</option>
+          <option value="AZ">Arizona</option>
+          <option value="AR">Arkansas</option>
+          <option value="CA">California</option>
+          <option value="CO">Colorado</option>
+          <option value="CT">Connecticut</option>
+          <option value="DE">Delaware</option>
+          <option value="FL">Florida</option>
+          <option value="GA">Gerogia</option>
+          <option value="HI">Hawaii</option>
+          <option value="ID">Idaho</option>
+        </select>
+        <div class="invalid-feedback">Please select a state</div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-6">
+        <label for="shape">Shape</label>
+        <input type="text" name="shape" class="form-control" required />
+        <div class="invalid-feedback">Please enter a shape</div>
+      </div>
+      <div class="form-group col-6">
+        <label for="duration">Duration</label>
+        <input type="text" name="duration" class="form-control" required />
+        <div class="invalid-feedback">Please enter a duration</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="summary">Summary</label>
+      <input type="text" name="summary" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<%- include('partials/footer') %>
